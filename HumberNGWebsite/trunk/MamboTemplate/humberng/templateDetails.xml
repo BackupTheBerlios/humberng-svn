@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<mosinstall type="template">
+        <name>humberng</name>
+        <creationDate>2005/9/6</creationDate>
+        <author>Olivier Van Acker</author>
+        <copyright>GPL</copyright>
+        <authorEmail>cyberroadie@gmail.com</authorEmail>
+        <authorUrl>humberng.berlios.de</authorUrl>
+        <version>1.0</version>
+        <description>HumberNG</description>
+        <files>
+                <filename>index.php</filename>
+                <filename>template_thumbnail.png</filename>
+        </files>
+        <images>
+                <filename>images/humberng.png</filename>
+				<filename>images/iconhumberng.png</filename>
+        </images>
+        <css>
+                <filename>css/default.css</filename>
+        </css>
+</mosinstall>
