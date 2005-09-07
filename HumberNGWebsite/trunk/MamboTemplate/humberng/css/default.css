@@ -10,6 +10,7 @@ padding:            15px 10px 10px 10px;
 }
 
 div.navigation {
+position:           top:35px;
 padding:            0px 10px 1px 10px;
 border-top:         2px solid #73924e;
 border-bottom:      2px solid #73924e;
