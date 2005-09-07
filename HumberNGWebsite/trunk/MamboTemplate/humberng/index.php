@@ -42,6 +42,6 @@ echo '<?xml version="1.0" encoding="'. $iso[1] .'"?' .'>';
 		</tr>
 	</table>
 </div>
-<img style="position:absolute; top:15px; right:15px;" src="images/iconhumberng.png" alt="icon" border="0" />
+<img style="position:absolute; top:0px; right:15px;" src="images/iconhumberng.png" alt="icon" border="0" />
 </body>
 </html>
