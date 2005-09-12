@@ -76,6 +76,7 @@ window.attachEvent("onload", correctPNG);
 	<table cellpadding="0" cellspacing="0" border="0" style="width:100%;">
 		<tr>
 			<td style="padding-left:10px;">&copy;2005 Broadband Capital Ltd.</td>
+			<td style="right:10px;">Powered by <a href="http://www.mamboserver.com/" alt="Mambo">Mambo</a></td>
 		</tr>
 	</table>
 </div>
