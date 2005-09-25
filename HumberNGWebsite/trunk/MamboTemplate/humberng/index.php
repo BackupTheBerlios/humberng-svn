@@ -75,7 +75,7 @@ window.attachEvent("onload", correctPNG);
 <div class="footer">
 	<table cellpadding="0" cellspacing="0" border="0" style="width:100%;">
 		<tr>
-			<td style="padding-left:10px;">&copy;2005 Broadband Capital Ltd.</td>
+			<td style="padding-left:10px;">&copy;2005 <a href="http://www.broadbandcapital.co.uk">Broadband Capital Ltd.</a></td>
 			<td style="padding-right:10px; text-align: right;">Powered by <a href="http://www.mamboserver.com/" alt="Mambo">Mambo</a></td>
 		</tr>
 	</table>
