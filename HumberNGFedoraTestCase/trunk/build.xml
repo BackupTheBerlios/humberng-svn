@@ -108,7 +108,11 @@
                        commands via the "/manager" web application)
 
 -->
-
+	  <property name="dev.server" value="black.broadbandcapital.co.uk" />
+	  <property name="dev.username" value="bcdevuser"/>
+	  <property name="dev.home" value="/home/bcdevuser"/>
+	  <property name="dev.password" value="blablabla"/>
+	
   <property name="app.name"      value="ftc"/>
   <property name="app.path"      value="/${app.name}"/>
   <property name="app.version"   value="0.1-dev"/>
@@ -116,11 +120,12 @@
   <property name="catalina.home" value="/usr/share/tomcat-5.5"/> 
   <property name="dist.home"     value="${basedir}/dist"/>
   <property name="docs.home"     value="${basedir}/docs"/>
-  <property name="manager.url"   value="http://black.broadbandcapital.co.uk:8080/manager"/>
+  <property name="manager.url"   value="http://${dev.server}:8080/manager"/>
   <property name="src.home"      value="${basedir}/src"/>
   <property name="manager.username" value="bcdevuser"/>
   <property name="manager.password" value="blablabla" />
   <property name="web.home"      value="${basedir}/web"/>
+
 
 
 <!-- ================== Custom Ant Task Definitions ======================= -->
@@ -359,12 +364,18 @@
   <target name="install" depends="compile"
    description="Install application to servlet container">
 
+	<sshexec host="${dev.server}" username="${dev.username}" password="${dev.password}" command="rm -rf ${dev.home}/*" trust="yes"/>
+	<scp todir="${dev.username}:${dev.password}@${dev.server}:${dev.home}" trust="yes" verbose="yes" >
+		<fileset dir="${build.home}">
+	        <include name="**/*"/>
+ 		</fileset>
+	</scp>
+  	
     <deploy url="${manager.url}"
        username="${manager.username}"
        password="${manager.password}"
            path="${app.path}"
-       localWar="file://${build.home}"/>
-
+       localWar="file://${dev.home}"/>
   </target>
 
 
