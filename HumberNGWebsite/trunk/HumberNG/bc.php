@@ -10,5 +10,8 @@ $ip = $lines[0];
 <div align="center">
 <a href="http://<?php echo $ip ?>/mediawiki/">Broadband Capital Wiki</a>
 </div>
+<div align="center">
+<a href="http://<?php echo $ip ?>:8080/ftc/">Fedora Test Case</a>
+</div>
 </body>
 <html>
