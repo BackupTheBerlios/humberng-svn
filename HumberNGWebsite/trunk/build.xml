@@ -4,6 +4,7 @@
         Humber NG VLE 
     </description>
 	<property name="MamboTemplate" location="MamboTemplate" />
+	<property name="Website" location="HumberNG" />
 	
 	<property name="BerliosUser" value="cyberroadie" />
 
@@ -23,4 +24,17 @@
 			</fileset>
 		</scp>
 	</target>
+	
+	<target name="website">
+		<!-- Key based authentication required -->
+		<scp todir="${BerliosUser}:pannekoek@shell.berlios.de:/home/groups/humberng/htdocs/" trust="yes" >
+			<fileset dir="${Website}">
+				<include name="**/*.xml"/>
+     			<include name="**/*.php"/>
+				<include name="**/*.css"/>
+				<include name="**/*.png"/>
+			</fileset>
+		</scp>
+	</target>
+	
 </project>
