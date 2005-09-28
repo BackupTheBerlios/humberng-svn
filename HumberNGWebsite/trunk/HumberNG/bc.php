@@ -2,6 +2,9 @@
 	$lines = file("http://dragon3d.berlios.de/ip.txt");
 	$ip = $lines[0];
 ?><html>
+<head>
+	<title>HuberNG Backend Central</title>
+</head>
 <body bgcolor="#eeeeee">
 <table width="100%" height="100%"  border="0" cellpadding="0" cellspacing="0">
   <tr>
