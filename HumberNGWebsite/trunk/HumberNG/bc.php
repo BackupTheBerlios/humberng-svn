@@ -32,6 +32,9 @@
 			<div align="center">
 			<a href="http://<?php echo $ip ?>/svnstats/hng/">Humber NG Coding Statistics</a>
 			</div>
+			<div align="center">
+			<a href="http://<?php echo $ip ?>/storyboard/">Storyboard</a>
+			</div>
         </td>    
         <td background="images/layertrans_06.png"/>    
       </tr>
