@@ -110,7 +110,7 @@
 -->
 	  <property name="dev.server" value="black.broadbandcapital.co.uk" />
 	  <property name="dev.username" value="bcdevuser"/>
-	  <property name="dev.home" value="/home/bcdevuser"/>
+	  <property name="dev.repos" value="/var/bc/ftc"/>
 	  <property name="dev.password" value="blablabla"/>
 	
   <property name="app.name"      value="ftc"/>
@@ -364,8 +364,8 @@
   <target name="install" depends="compile"
    description="Install application to servlet container">
 
-	<sshexec host="${dev.server}" username="${dev.username}" password="${dev.password}" command="rm -rf ${dev.home}/*" trust="yes"/>
-	<scp todir="${dev.username}:${dev.password}@${dev.server}:${dev.home}" trust="yes" verbose="yes" >
+	<sshexec host="${dev.server}" username="${dev.username}" password="${dev.password}" command="rm -rf ${dev.repos}/*" trust="yes"/>
+	<scp todir="${dev.username}:${dev.password}@${dev.server}:${dev.repos}" trust="yes" verbose="yes" >
 		<fileset dir="${build.home}">
 	        <include name="**/*"/>
  		</fileset>
@@ -375,7 +375,7 @@
        username="${manager.username}"
        password="${manager.password}"
            path="${app.path}"
-       localWar="file://${dev.home}"/>
+       localWar="file://${dev.repos}"/>
   </target>
 
 
