@@ -117,7 +117,7 @@
   <property name="app.path"      value="/${app.name}"/>
   <property name="app.version"   value="0.1-dev"/>
   <property name="build.home"    value="${basedir}/build"/>
-  <property name="catalina.home" value="/usr/share/tomcat-5.5"/> 
+  <property name="catalina.home" value="/usr/share/tomcat-5"/> 
   <property name="dist.home"     value="${basedir}/dist"/>
   <property name="docs.home"     value="${basedir}/docs"/>
   <property name="manager.url"   value="http://${dev.server}:8080/manager"/>
