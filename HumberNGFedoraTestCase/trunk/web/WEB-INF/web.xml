@@ -85,14 +85,10 @@
         filename extension is removed).  The corresponding value is the
         name of the action class that will be used to process this request.
       </description>
-      <servlet-class>com.mycompany.mypackage.ControllerServlet</servlet-class>
+      <servlet-class>net.humberng.ftc.ControllerServlet</servlet-class>
       <init-param>
-        <param-name>listOrders</param-name>
-        <param-value>com.mycompany.myactions.ListOrdersAction</param-value>
-      </init-param>
-      <init-param>
-        <param-name>saveCustomer</param-name>
-        <param-value>com.mycompany.myactions.SaveCustomerAction</param-value>
+        <param-name>GoodbyeWorld</param-name>
+        <param-value>net.humberng.ftc.GoodbyeWorld</param-value>
       </init-param>
       <!-- Load this servlet at server startup time -->
       <load-on-startup>5</load-on-startup>
