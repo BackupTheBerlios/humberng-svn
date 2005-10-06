@@ -237,6 +237,10 @@
       <include name="*.jar"/>
     </fileset>
 
+  	<fileset dir="${web.home}/WEB-INF/lib">
+  		<include name="*.jar"/>
+    </fileset>
+
   </path>
 
 
@@ -330,6 +334,9 @@
       <fileset dir="${docs.home}"/>
     </copy>
 
+    <copy    todir="${dist.home}/docs">
+      <fileset dir="${docs.home}"/>
+    </copy>
     <!-- Create application JAR file -->
     <jar jarfile="${dist.home}/${app.name}-${app.version}.war"
          basedir="${build.home}"/>
