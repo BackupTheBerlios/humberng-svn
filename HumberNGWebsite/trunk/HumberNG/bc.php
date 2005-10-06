@@ -21,6 +21,9 @@
 			<img src="images/humberng.png">
 			</div>
 			<div align="center">
+				<?php echo $ip ?>
+			</div>
+			<div align="center">
 			<a href="http://<?php echo $ip ?>/mediawiki/">Broadband Capital Wiki</a>
 			</div>
 			<div align="center">
