@@ -19,7 +19,7 @@ import org.apache.commons.fileupload.servlet.*;
 public class UploadPicture extends HttpServlet {
 		
 	List fileItems;
-	String fileName, fileNames;
+	private static String DOCROOT = "/var/www/localhost/htdocs/tmp/";
 	
 	public UploadPicture () {
 		
@@ -46,16 +46,31 @@ public class UploadPicture extends HttpServlet {
 			System.out.println(ex.toString());
 		}
 
-		for(int i = 0; i < fileItems.size(); i++) {
-			FileItem file = (FileItem) fileItems.get(i);
-			fileName = file.getName();
-			fileNames += fileNames + "<br>" + fileName;
+		String fileNames = new String();
+		Iterator iter = fileItems.iterator();
+		
+		while(iter.hasNext()) {
+			FileItem item = (FileItem) iter.next();
+			if(item.isFormField()) {
+				String name = item.getFieldName();
+				String value = item.getString();
+				fileNames += name + ": " + value + "<br>";
+			} else {
+				String fileName = item.getName();
+				fileNames += "<img src=\"http://black.broadbandcapital.co.uk/tmp/" + fileName + "\"><br>";
+				File uploadedFile = new File(DOCROOT + fileName);
+				try {
+					item.write(uploadedFile);
+				} catch (Exception ex) {
+					System.out.println(ex.toString());
+				}
+			}
 		}
 		
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		out.println("<body>" +
-				    "Files: <br>" + fileNames +
+				    fileNames +
 				    "</body>" +
 				    "</html>");
 	}
