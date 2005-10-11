@@ -18,7 +18,6 @@ import org.apache.commons.fileupload.servlet.*;
  */
 public class UploadPicture extends HttpServlet {
 		
-	List fileItems;
 	private static String DOCROOT = "/var/www/localhost/htdocs/tmp/";
 	
 	public UploadPicture () {
@@ -36,6 +35,8 @@ public class UploadPicture extends HttpServlet {
 	public void doGet(HttpServletRequest request,
             HttpServletResponse response)
     throws ServletException, IOException {
+		
+		List fileItems = null;
 		
 		DiskFileItemFactory factory = new DiskFileItemFactory();
 		ServletFileUpload upload = new ServletFileUpload(factory);
