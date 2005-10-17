@@ -117,6 +117,7 @@
   <property name="app.path"      value="/${app.name}"/>
   <property name="app.version"   value="0.1-dev"/>
   <property name="build.home"    value="${basedir}/build"/>
+  <property name="build.src"    value="${build.home}/src"/>
   <property name="catalina.home" value="/usr/share/tomcat-5"/> 
   <property name="dist.home"     value="${basedir}/dist"/>
   <property name="docs.home"     value="${basedir}/docs"/>
@@ -125,6 +126,7 @@
   <property name="manager.username" value="bcdevuser"/>
   <property name="manager.password" value="blablabla" />
   <property name="web.home"      value="${basedir}/web"/>
+  <property name="wsdl.home"      value="${basedir}/wsdl"/>
 
 
 
@@ -290,6 +292,7 @@
   <target name="compile" depends="prepare"
    description="Compile Java sources">
 
+  	
     <!-- Compile Java classes as necessary -->
     <mkdir    dir="${build.home}/WEB-INF/classes"/>
     <javac srcdir="${src.home}"
@@ -519,5 +522,24 @@
 
   </target>
 
+  <target name="wsdl" description="Java files generation from WSDL">
+  	<mkdir dir="${build.src}"/>
 
+  	<!--
+	<Axis-wsdl2java url="${wsdl.home}/Fedora-API-A.wsdl" 
+	                output="${build.src}" 
+		            verbose="true"  />
+    -->
+  	
+	<Axis-wsdl2java url="${wsdl.home}/Fedora-API-M.wsdl" 
+		                output="${build.src}" 
+			            verbose="true"  />
+
+  	<!-- 
+  	     No automated copy, in case skeletons are already programmed,
+  	     manual copy to ${home.src} dir.
+  	-->
+  	
+  </target>
+	
 </project>
