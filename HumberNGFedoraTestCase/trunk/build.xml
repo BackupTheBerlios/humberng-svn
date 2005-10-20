@@ -26,6 +26,7 @@
   <property name="manager.password" value="blablabla" />
   <property name="web.home"      value="${basedir}/web"/>
   <property name="wsdl.home"      value="${basedir}/wsdl"/>
+  <property name="junit.home"    value="/usr/share/junit/" />
 
 <!-- ================== Custom Ant Task Definitions ======================= -->
 
@@ -69,6 +70,10 @@
     </fileset>
 
   	<fileset dir="${web.home}/WEB-INF/lib">
+  		<include name="*.jar"/>
+    </fileset>
+
+  	<fileset dir="${junit.home}/lib">
   		<include name="*.jar"/>
     </fileset>
 
@@ -235,14 +240,16 @@
   	<mkdir dir="${build.src}"/>
 
 	<Axis-wsdl2java url="${wsdl.home}/Fedora-API-A.wsdl" 
-	                output="${build.src}" 
+	                output="${src.home}" 
 		            verbose="true"  
-                    namespacemappingfile="${wsdl.home}/NStoPkg.properties" />
+                    namespacemappingfile="${wsdl.home}/NStoPkg.properties"
+	                testcase="true" />
   	
 	<Axis-wsdl2java url="${wsdl.home}/Fedora-API-M.wsdl" 
-		                output="${build.src}" 
+		                output="${src.home}" 
 			            verbose="true"  
-                   		namespacemappingfile="${wsdl.home}/NStoPkg.properties" />
+                   		namespacemappingfile="${wsdl.home}/NStoPkg.properties" 
+                		testcase="true" />
 
   	<!-- 
   	     No automated copy, in case skeletons are already programmed,
