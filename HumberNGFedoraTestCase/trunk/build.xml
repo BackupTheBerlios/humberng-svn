@@ -234,15 +234,15 @@
   <target name="wsdl" description="Java files generation from WSDL">
   	<mkdir dir="${build.src}"/>
 
-  	<!--
 	<Axis-wsdl2java url="${wsdl.home}/Fedora-API-A.wsdl" 
 	                output="${build.src}" 
-		            verbose="true"  />
-    -->
+		            verbose="true"  
+                    namespacemappingfile="${wsdl.home}/NStoPkg.properties" />
   	
 	<Axis-wsdl2java url="${wsdl.home}/Fedora-API-M.wsdl" 
 		                output="${build.src}" 
-			            verbose="true"  />
+			            verbose="true"  
+                   		namespacemappingfile="${wsdl.home}/NStoPkg.properties" />
 
   	<!-- 
   	     No automated copy, in case skeletons are already programmed,
