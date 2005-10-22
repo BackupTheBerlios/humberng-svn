@@ -1,22 +1,24 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="/tags/struts-bean" prefix="bean" %>
+<%@ taglib uri="/tags/struts-html" prefix="html" %>
+
+<html:xhtml/>
+<html>
+<head>
+<title><bean:message key="ptc.uploadtitle"/></title>
+</head>
+
 <html>
 <body>
-<form action="/ftc/uploadPic" method="post" enctype="multipart/form-data">
+<html:form action="/UploadFile.do" focus="file" method="post" enctype="multipart/form-data">
 <table>
 	<tr>
 		<td>Upload picture</td>
-		<td><input type="file" name="bc_file"></td>
-		<td><input type="submit" value="Upload"></td>
+		<td><html:file property="file" /></td>
+		<td><html:submit property="Submit" value="submit" /></td>
 	</tr>
 </table>
-</form>
-<form action="/ftc/showPic" method="post" >
-<table>
-	<tr>
-		<td>Show picture</td>
-		<td><input type="text" name="bc_pid"></td>
-		<td><input type="submit" value="Show"></td>
-	</tr>
-</table>
-</form>
+</html:form>
+
 </body>
 </html>
