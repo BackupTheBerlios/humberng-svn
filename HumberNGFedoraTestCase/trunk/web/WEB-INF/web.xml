@@ -5,41 +5,81 @@
     "http://java.sun.com/dtd/web-app_2_3.dtd">
 
 <web-app>
-
-
+    
     <!-- General description of your web application -->
-
+    
     <display-name>Fedora Test Case</display-name>
-    <description>
-		The Fedora Test Case is a project to research the different aspects of 
-		the Fedora Repository by building different applications with limited 
-		functionality. By building this we will get a good understanding of 
-		the different aspects of Fedora and also gives us insight in what will 
-		be the best way of using it in the VLE. 
-    </description>
-
+    <description> The Fedora Test Case is a project to research the different aspects of the
+        Fedora Repository by building different applications with limited functionality.
+        By building this we will get a good understanding of the different aspects of Fedora
+        and also gives us insight in what will be the best way of using it in the VLE.
+        </description>
+    
     <context-param>
-      <param-name>webmaster</param-name>
-      <param-value>olivier.van.acker@broadbandcapital.co.uk</param-value>
-      <description>
-        The EMAIL address of the administrator to whom questions
-        and comments about this application should be addressed.
-      </description>
+        <param-name>webmaster</param-name>
+        <param-value>olivier.van.acker@broadbandcapital.co.uk</param-value>
+        <description> The EMAIL address of the administrator to whom questions and comments
+            about this application should be addressed. </description>
     </context-param>
-  
+    
+    <!-- Start Struts configuration -->
+    
     <servlet>
-		<servlet-name>upload</servlet-name>
-        <servlet-class>net.humberng.ftc.UploadPicture</servlet-class>
-        <load-on-startup>5</load-on-startup>
+        <servlet-name>action</servlet-name>
+        <servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+        <init-param>
+            <param-name>config</param-name>
+            <param-value>/WEB-INF/struts-config.xml</param-value>
+        </init-param>
+        <init-param>
+            <param-name>debug</param-name>
+            <param-value>2</param-value>
+        </init-param>
+        <init-param>
+            <param-name>detail</param-name>
+            <param-value>2</param-value>
+        </init-param>
+        <load-on-startup>2</load-on-startup>
     </servlet>
-
+    
     <servlet-mapping>
-            <servlet-name>upload</servlet-name>
-            <url-pattern>/uploadPic</url-pattern>
+        <servlet-name>action</servlet-name>
+        <url-pattern>*.do</url-pattern>
     </servlet-mapping>
-
-<session-config>
-      <session-timeout>30</session-timeout>
+    
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+    
+    <taglib>
+        <taglib-uri>/tags/struts-bean</taglib-uri>
+        <taglib-location>/WEB-INF/struts-bean.tld</taglib-location>
+    </taglib>
+    
+    <taglib>
+        <taglib-uri>/tags/struts-html</taglib-uri>
+        <taglib-location>/WEB-INF/struts-html.tld</taglib-location>
+    </taglib>
+    
+    <taglib>
+        <taglib-uri>/tags/struts-logic</taglib-uri>
+        <taglib-location>/WEB-INF/struts-logic.tld</taglib-location>
+    </taglib>
+    
+    <taglib>
+        <taglib-uri>/tags/struts-nested</taglib-uri>
+        <taglib-location>/WEB-INF/struts-nested.tld</taglib-location>
+    </taglib>
+    
+    <taglib>
+        <taglib-uri>/tags/struts-tiles</taglib-uri>
+        <taglib-location>/WEB-INF/struts-tiles.tld</taglib-location>
+    </taglib>
+    
+    <!-- End Struts configuration -->
+    
+    <session-config>
+        <session-timeout>30</session-timeout>
     </session-config>
-
+    
 </web-app>
